@@ -1,0 +1,14 @@
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\pond simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\pond simulator.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\pond simulator.AssemblyInfo.cs
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\pond simulator.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\pond simulator\bin\Debug\net7.0\pond simulator.exe
+C:\Users\Admin\Desktop\pond simulator\bin\Debug\net7.0\pond simulator.deps.json
+C:\Users\Admin\Desktop\pond simulator\bin\Debug\net7.0\pond simulator.runtimeconfig.json
+C:\Users\Admin\Desktop\pond simulator\bin\Debug\net7.0\pond simulator.dll
+C:\Users\Admin\Desktop\pond simulator\bin\Debug\net7.0\pond simulator.pdb
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\pond simulator.dll
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\refint\pond simulator.dll
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\pond simulator.pdb
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\pond simulator.genruntimeconfig.cache
+C:\Users\Admin\Desktop\pond simulator\obj\Debug\net7.0\ref\pond simulator.dll
