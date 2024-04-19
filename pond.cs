@@ -18,6 +18,10 @@ namespace pond_simulator{
         
         public static void Statistic()
         {
+            if (biomass_food <= 0)
+                {
+                    biomass_food = 0;
+                }
             Console.WriteLine($"________________День: {day}________________");
             Console.WriteLine($"Количество рыбы: {amount_fish}");
             Console.WriteLine($"Количество окуня: {perch}");

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pond simulator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab04737f0deb76fb2aea5110e2cbd955ffcc21bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9def69e20eb6302639468c7712f454567998e369")]
 [assembly: System.Reflection.AssemblyProductAttribute("pond simulator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pond simulator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

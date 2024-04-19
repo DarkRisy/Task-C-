@@ -6,8 +6,6 @@ namespace pond_simulator
         public double massa;
         public double max_massa;
         public int age;
-        public int fish_count;
-        public int crucian;
         public int age_max;
         public bool eat_food;
         public bool eat_fish;
@@ -25,15 +23,25 @@ namespace pond_simulator
         }
         public void Eat()
         {
-            if (eat_fish == true && mass_eaten_fish > Pond.biomass_crucian)
+            if (eat_fish == true && mass_eaten_fish > Pond.biomass_crucian && Pond.pike > 0 || Pond.perch > 0 && Pond.crucian > 0)
             {
-                massa = (max_massa / age_max) * 0.1 * Pond.day;
-                crucian -= 1;
+                if (Pond.crucian > 0)
+                {
+                    massa += (max_massa / age_max) * Pond.day;
+                    Pond.crucian -= 1;
+                    Pond.fish_died += 1;
+                    Pond.amount_fish -= 1;
+                }
+
             }
-            if (eat_food == true && Pond.biomass_food > 0)
+            if (eat_food == true && Pond.biomass_food > 0 || Pond.perch > 0 || Pond.crucian > 0)
             {
-                massa = (max_massa / age_max) * 0.1 * Pond.day;
-                Pond.biomass_food = Pond.biomass_food + Pond.everyday_rise_food - count_food;
+                massa += (max_massa / age_max) * Pond.day;
+                if (Pond.biomass_food <= Pond.max_biomass_food)
+                {
+                    Pond.biomass_food += Pond.everyday_rise_food - count_food * (Pond.perch + Pond.crucian);
+                }
+                
             }
             else
             {
@@ -47,32 +55,50 @@ namespace pond_simulator
         public void Full_die()
         {
             {
-                Pond.fish_died += fish_count + crucian;
-                Pond.amount_fish -= fish_count + crucian;
-                fish_count -= fish_count;
-                crucian -= crucian;
+                Pond.fish_died += Pond.perch + Pond.pike + Pond.crucian;
+                Pond.amount_fish -= Pond.perch + Pond.pike + Pond.crucian;
+                Pond.perch -= Pond.perch;
+                Pond.pike -= Pond.pike;
+                Pond.crucian -= Pond.crucian;
             }
         }
         public void Die()
         {
             {
-                Pond.fish_died += 1;
-                Pond.amount_fish -= 1;
-                fish_count -= 1;
-                crucian -= 1;
+                var random = new Random();
+                for (int i = 0; i < 2; i++)
+                {
+                    if (Pond.crucian > 0 && random.Next(50) == 1)
+                    {
+                        Pond.fish_died += 1;
+                        Pond.amount_fish -= 1;
+                        Pond.crucian -= 1;
+                        break;
+                    }
+                    if (Pond.perch > 0 && random.Next(50) == 2)
+                    {
+                        Pond.fish_died += 1;
+                        Pond.amount_fish -= 1;
+                        Pond.perch -= 1;
+                        break;
+                    }
+                    if (Pond.pike > 0 && random.Next(50) == 3)
+                    {
+                        Pond.fish_died += 1;
+                        Pond.amount_fish -= 1;
+                        Pond.pike -= 1;
+                        break;
+                    }
+
+                }
+
             }
         }
         public void Fisher()
         {
-            var random = new Random();
-            for (int i = 0; i < 1; i++)
-            {
-                if (random.Next(2) == 1)
-                {
-                    Die();
-                }
-                break;
-            }
+
+            Die();
+
         }
 
     }
